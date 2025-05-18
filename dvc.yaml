@@ -1,0 +1,44 @@
+stages:
+  data_ingestion:
+    cmd: python src/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/pipeline/stage_01_data_ingestion.py
+    outs:
+      - artifacts/data_ingestion
+
+  data_validation:
+    cmd: python src/pipeline/stage_02_data_validation.py
+    deps:
+      - artifacts/data_ingestion/data/
+      - src/pipeline/stage_02_data_validation.py
+    outs:
+      - artifacts/data_validation
+
+  data_transformation:
+    cmd: python src/pipeline/stage_03_data_transformation.py
+    deps:
+      - artifacts/data_validation/status.txt
+      - src/pipeline/stage_03_data_transformation.py
+      - src/components/data_transformation.py
+      - src/entity/config_entity.py
+      - src/config/configuration.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_transformation
+
+  model_training:
+    cmd: python src/pipeline/stage_04_model_trainer.py
+    deps:
+      - artifacts/data_transformation
+      - src/pipeline/stage_04_model_trainer.py
+      - src/components/model_training.py
+    outs:
+      - artifacts/model_trainer/model.joblib
+
+  model_evaluation:
+    cmd: python src/pipeline/stage_05_model_evaluation.py
+    deps:
+      - artifacts/model_trainer/model.joblib
+      - src/pipeline/stage_05_model_evaluation.py
+    metrics:
+      - artifacts/model_evaluation

@@ -1,0 +1,57 @@
+COLUMNS :
+  Type  :  object
+  Days for shipping (real)  :  int64
+  Days for shipment (scheduled)  :  int64
+  Benefit per order  :  float64
+  Sales per customer  :  float64
+  Delivery Status  :  object
+  Late_delivery_risk  :  int64
+  Category Id  :  int64
+  Category Name  :  object
+  Customer City  :  object
+  Customer Country  :  object
+  Customer Email  :  object
+  Customer Fname  :  object
+  Customer Id  :  int64
+  Customer Lname  :  object
+  Customer Password  :  object
+  Customer Segment  :  object
+  Customer State  :  object
+  Customer Street  :  object
+  Customer Zipcode  :  float64
+  Department Id  :  int64
+  Department Name  :  object
+  Latitude  :  float64
+  Longitude  :  float64
+  Market  :  object
+  Order City  :  object
+  Order Country  :  object
+  Order Customer Id  :  int64
+  order date (DateOrders)  :  object
+  Order Id  :  int64
+  Order Item Cardprod Id  :  int64
+  Order Item Discount  :  float64
+  Order Item Discount Rate  :  float64
+  Order Item Id  :  int64
+  Order Item Product Price  :  float64
+  Order Item Profit Ratio  :  float64
+  Order Item Quantity  :  int64
+  Sales  :  float64
+  Order Item Total  :  float64
+  Order Profit Per Order  :  float64
+  Order Region  :  object
+  Order State  :  object
+  Order Status  :  object
+  Order Zipcode  :  float64
+  Product Card Id  :  int64
+  Product Category Id  :  int64
+  Product Description  :  float64
+  Product Image  :  object
+  Product Name  :  object
+  Product Price  :  float64
+  Product Status  :  int64
+  shipping date (DateOrders)  :  object
+  Shipping Mode  :  object
+
+TARGET_COLUMN:
+  name : Order Item Quantity

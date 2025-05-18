@@ -1,0 +1,14 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+joblib
+dvc==3.53.0
+ensure==1.0.2
+pyYaml
+tqdm
+python-box==6.0.2
+types-pyYaml
+streamlit
+plotly
+-e .

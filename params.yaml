@@ -1,0 +1,4 @@
+GradientBoostingRegressor:
+  max_features: 20 
+  min_samples_split: 50
+  n_estimators: 90
